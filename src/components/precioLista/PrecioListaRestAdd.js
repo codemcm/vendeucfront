@@ -1,12 +1,11 @@
 import Config from "../Config.json";
 const axios = require('axios').default;
 
-export function ProductoCatalogoRestAdd(nombreEmpresa, direccion, telefono, celular){
-  return axios.post(Config.APIURLDEV +'Proveedor', {
-    empresaNombre: nombreEmpresa,
-    direccion: direccion,
-    telefono: telefono,
-    celular : celular
+export function PrecioListaRestAdd(precioCompra, precioVenta, fechaRegistro){
+  return axios.post(Config.APIURLDEV +'PrecioLista', {
+    precioCompra: precioCompra,
+    precioVenta: precioVenta,
+    fechaRegistro: fechaRegistro
   })
   .then(function (response) {
     console.log(response);
@@ -17,8 +16,8 @@ export function ProductoCatalogoRestAdd(nombreEmpresa, direccion, telefono, celu
   });
 }
 
-export function ProveedorList(){
-    return axios.get(Config.APIURLDEV +'Proveedor')
+export function PrecioListaList(){
+    return axios.get(Config.APIURLDEV +'PrecioLista')
     .then(function (response) {
       return response.data
     })

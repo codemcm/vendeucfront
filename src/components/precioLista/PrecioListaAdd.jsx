@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import {ProductoCatalogoRestAdd} from './ProductoCatalogoRestAdd';
+import {PrecioListaRestAdd} from './PrecioListaRestAdd';
 
-function ProductoCatalogoAdd(){
-    const[clave, setClave] = useState("")
-    const[nombre, setNombre] = useState("")
-    const[descripcion, setDescripcion] = useState("")
+function PrecioListaAdd(){
+    const[precioCompra, setPrecioCompra] = useState("")
+    const[precioVenta, setPrecioVenta] = useState("")
+    const[fechaRegistro, setFechaRegistro] = useState("")
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        ProductoCatalogoRestAdd(clave, nombre, descripcion)
+        PrecioListaRestAdd(precioCompra, precioVenta, fechaRegistro)
         .then((res) => {
             if (res.status == "Ok") {
               alert(`Registro exitoso ${res.body}`);
@@ -26,27 +26,27 @@ function ProductoCatalogoAdd(){
             <Container>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
-                    <Form.Label>Clave</Form.Label>
+                    <Form.Label>Precio de Compra</Form.Label>
                     <Form.Control type="text" 
-                        placeholder="clave"
-                        value = {clave}
-                        onChange = {(e)=> setClave(e.target.value)}
+                        placeholder="precioCompra"
+                        value = {precioCompra}
+                        onChange = {(e)=> setPrecioCompra(e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Nombre del Producto</Form.Label>
+                    <Form.Label>Precio de Venta</Form.Label>
                     <Form.Control type="text" 
-                        placeholder="nombre"
-                        value = {nombre}
-                        onChange = {(e)=> setNombre(e.target.value)}
+                        placeholder="precioVenta"
+                        value = {precioVenta}
+                        onChange = {(e)=> setPrecioVenta(e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Descripcion del Producto</Form.Label>
-                    <Form.Control type="text" 
-                        placeholder="descripcion"
-                        value = {descripcion}
-                        onChange = {(e)=> setDescripcion(e.target.value)}
+                    <Form.Label>Fecha de Registro</Form.Label>
+                    <Form.Control type="Datetime" 
+                        placeholder="fechaRegistro"
+                        value = {fechaRegistro}
+                        onChange = {(e)=> setFechaRegistro(e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
@@ -62,4 +62,4 @@ function ProductoCatalogoAdd(){
         </div>
     );
 }
-export default ProductoCatalogoAdd;
+export default PrecioListaAdd;

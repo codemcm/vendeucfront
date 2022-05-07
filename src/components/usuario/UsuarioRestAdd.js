@@ -4,7 +4,7 @@ const axios = require('axios').default;
 export function UsuarioRestAdd(usuario, password){
   return axios.post(Config.APIURLDEV +'Usuario', {
     username: usuario,
-    password: password
+    contrasenia: password
   })
   .then(function (response) {
     console.log(response);

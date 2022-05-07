@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import {ProductoCatalogoRestAdd} from './ProductoCatalogoRestAdd';
+import {ProductoRestAdd} from './ProductoRestAdd';
 
-function ProductoCatalogoAdd(){
-    const[clave, setClave] = useState("")
-    const[nombre, setNombre] = useState("")
-    const[descripcion, setDescripcion] = useState("")
+function ProductoAdd(){
+   /* atributos que mostrar?
+    const[, set] = useState("")
+    const[, set] = useState("")
+    const[, set] = useState("")*/
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        ProductoCatalogoRestAdd(clave, nombre, descripcion)
+        ProductoRestAdd()
         .then((res) => {
             if (res.status == "Ok") {
               alert(`Registro exitoso ${res.body}`);
@@ -26,7 +27,7 @@ function ProductoCatalogoAdd(){
             <Container>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
-                    <Form.Label>Clave</Form.Label>
+                    <Form.Label>?</Form.Label>
                     <Form.Control type="text" 
                         placeholder="clave"
                         value = {clave}
@@ -34,7 +35,7 @@ function ProductoCatalogoAdd(){
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Nombre del Producto</Form.Label>
+                    <Form.Label>?</Form.Label>
                     <Form.Control type="text" 
                         placeholder="nombre"
                         value = {nombre}
@@ -42,7 +43,7 @@ function ProductoCatalogoAdd(){
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Descripcion del Producto</Form.Label>
+                    <Form.Label>?</Form.Label>
                     <Form.Control type="text" 
                         placeholder="descripcion"
                         value = {descripcion}
@@ -62,4 +63,4 @@ function ProductoCatalogoAdd(){
         </div>
     );
 }
-export default ProductoCatalogoAdd;
+export default ProductoAdd;
