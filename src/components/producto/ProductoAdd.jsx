@@ -26,30 +26,7 @@ function ProductoAdd(){
         <div>
             <Container>
             <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
-                    <Form.Label>?</Form.Label>
-                    <Form.Control type="text" 
-                        placeholder="clave"
-                        value = {clave}
-                        onChange = {(e)=> setClave(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>?</Form.Label>
-                    <Form.Control type="text" 
-                        placeholder="nombre"
-                        value = {nombre}
-                        onChange = {(e)=> setNombre(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>?</Form.Label>
-                    <Form.Control type="text" 
-                        placeholder="descripcion"
-                        value = {descripcion}
-                        onChange = {(e)=> setDescripcion(e.target.value)}
-                    />
-                </Form.Group>
+                
                 <Form.Group className="mb-3">
                 <Button variant="primary" type="submit">
                     Registrar

@@ -71,4 +71,4 @@ function ProveedorAdd(){
         </div>
     );
 }
-export default ProductoCatalogoAdd;
+export default ProveedorAdd;
