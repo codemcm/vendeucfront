@@ -1,10 +1,11 @@
 import Config from "../Config.json";
 const axios = require('axios').default;
 
-export function UsuarioRestAdd(usuario, password){
-  return axios.post(Config.APIURLDEV +'Usuario', {
-    username: usuario,
-    contrasenia: password
+export function PrecioListaRest(precioCompra, precioVenta, fechaRegistro){
+  return axios.post(Config.APIURLDEV +'PrecioLista', {
+    precioCompra: precioCompra,
+    precioVenta: precioVenta,
+    fechaRegistro: fechaRegistro
   })
   .then(function (response) {
     console.log(response);
@@ -15,8 +16,8 @@ export function UsuarioRestAdd(usuario, password){
   });
 }
 
-export function UsuarioList(){
-    return axios.get(Config.APIURLDEV +'Usuario')
+export function PrecioListaList(){
+    return axios.get(Config.APIURLDEV +'PrecioLista')
     .then(function (response) {
       return response.data
     })

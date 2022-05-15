@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
-import UsuarioAdd from './components/usuario/UsuarioAdd';
 import reportWebVitals from './reportWebVitals';
-import Tabla from './components/tabledemo/Tabla';
+import UsuarioAdd from './components/usuario/UsuarioAdd';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -1,0 +1,5 @@
+{
+    "API_URL": "https://localhost:7282/api/",
+    "APIURLDEV": "https://localhost:7282/api/",
+    "DEV":"true"
+}

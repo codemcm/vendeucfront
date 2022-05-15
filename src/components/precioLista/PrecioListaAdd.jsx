@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import {PrecioListaRestAdd} from './PrecioListaRestAdd';
+import {PrecioListaRest} from './PrecioListaRest';
 
 function PrecioListaAdd(){
     const[precioCompra, setPrecioCompra] = useState("")
@@ -11,7 +11,7 @@ function PrecioListaAdd(){
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        PrecioListaRestAdd(precioCompra, precioVenta, fechaRegistro)
+        PrecioListaRest(precioCompra, precioVenta, fechaRegistro)
         .then((res) => {
             if (res.status == "Ok") {
               alert(`Registro exitoso ${res.body}`);
