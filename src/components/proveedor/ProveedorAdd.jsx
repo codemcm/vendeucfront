@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import {ProveedorRestAdd} from './ProveedorRestAdd';
+import {ProveedorRest} from './ProveedorRest';
 
 function ProveedorAdd(){
     const[nombreEmpresa, setNombreEmpresa] = useState("")
@@ -12,7 +12,7 @@ function ProveedorAdd(){
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        ProveedorRestAdd(nombreEmpresa, direccion, telefono, celular)
+        ProveedorRest(nombreEmpresa, direccion, telefono, celular)
         .then((res) => {
             if (res.status == "Ok") {
               alert(`Registro exitoso ${res.body}`);
@@ -71,4 +71,4 @@ function ProveedorAdd(){
         </div>
     );
 }
-export default ProductoCatalogoAdd;
+export default ProveedorAdd;
