@@ -1,18 +1,21 @@
 import Config from "../Config.json";
 const axios = require('axios').default;
 
-export function PrecioListaRestAdd(precioCompra, precioVenta, fechaRegistro){
+export function PrecioListaRest(precioCompra, precioVenta, fechaRegistro){
   return axios.post(Config.APIURLDEV +'PrecioLista', {
     precioCompra: precioCompra,
     precioVenta: precioVenta,
     fechaRegistro: fechaRegistro
   })
   .then(function (response) {
-    console.log(response);
     return response.data;
   })
   .catch(function (error) {
-    console.log(error);
+    let respuesta= {
+      status:'error',
+      message: error + ""
+  }
+   return respuesta
   });
 }
 

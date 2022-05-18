@@ -1,16 +1,21 @@
 import Config from "../Config.json";
 const axios = require('axios').default;
 
-export function ProductoRestAdd( /*que recibe?*/){
+export function ProductoRest (productoCatalogoId, proveedorId, precioListaId){
   return axios.post(Config.APIURLDEV +'Producto', {
-    
+    productoCatalogoId: productoCatalogoId,
+    proveedorId: proveedorId,
+    precioListaId: precioListaId
   })
   .then(function (response) {
-    console.log(response);
     return response.data;
   })
   .catch(function (error) {
-    console.log(error);
+    let respuesta= {
+      status:'error',
+      message: error + ""
+  }
+   return respuesta
   });
 }
 
