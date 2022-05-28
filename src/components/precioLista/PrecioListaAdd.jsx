@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Stack from "react-bootstrap/Stack"
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Navegacion from "../Navegacion";
 import {PrecioListaRest} from './PrecioListaRest';
 
 function PrecioListaAdd(){
@@ -44,6 +45,7 @@ function PrecioListaAdd(){
             };
     return(
         <div>
+            <Navegacion></Navegacion>
             <Container>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
